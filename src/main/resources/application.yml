@@ -1,0 +1,15 @@
+spring:
+  freemarker:
+    allow-request-override: false
+    cache: false
+    check-template-location: true
+    charset: UTF-8
+    content-type: text/html
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: false
+logging:
+  path:  /home/dist/automatic/log
+server:
+  port: 11112
+
