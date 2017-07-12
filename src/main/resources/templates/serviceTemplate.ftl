@@ -2,14 +2,14 @@ package ${packageName};
 
 import com.cloud.Code;
 import com.cloud.MatrixModel;
-import com.note.dao.${entityPackageName}.${className}Repository;
-import com.note.entity.EntityCURD;
-import com.note.entity.${entityPackageName}.${className};
-import com.note.exception.BusinessException;
-import com.note.model.ModelCURD;
-import com.note.model.${entityPackageName}.${className}Model;
-import com.note.model.${entityPackageName}.${className}UpdateModel;
-import com.note.service.${entityPackageName}.I${className}Service;
+import ${projectPackageName}.dao.${entityPackageName}.${className}Repository;
+import ${projectPackageName}.entity.EntityCURD;
+import ${projectPackageName}.entity.${entityPackageName}.${className};
+import ${projectPackageName}.exception.BusinessException;
+import ${projectPackageName}.model.ModelCURD;
+import ${projectPackageName}.model.${entityPackageName}.${className}Model;
+import ${projectPackageName}.model.${entityPackageName}.${className}UpdateModel;
+import ${projectPackageName}.service.${entityPackageName}.I${className}Service;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 

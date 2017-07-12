@@ -102,6 +102,7 @@ public class Automatic {
         root.put("entityPackageName", model.getEntityPackageName());
         root.put("className", model.getEntityName());
         root.put("date",new Date().toString());
+        root.put("projectPackageName",model.getProjectPackageName());
         //输出目录
         out(model,"web",realPath,temp,root,model.getEntityName(),model.getEntityName()+"Controller");
 
@@ -122,6 +123,7 @@ public class Automatic {
         root.put("entityPackageName", model.getEntityPackageName());
         root.put("date",new Date().toString());
         root.put("attrs", model.getEntityAttributes());
+        root.put("projectPackageName",model.getProjectPackageName());
         //输出目录
         out(model,"service",realPath,temp,root,model.getEntityName(),model.getEntityName()+"Service");
     }
@@ -139,6 +141,7 @@ public class Automatic {
         root.put("packageName",  filePathJoint(model.getProjectPackageName(),".service.",model.getEntityPackageName()));
         root.put("className", model.getEntityName());
         root.put("date",new Date().toString());
+        root.put("projectPackageName",model.getProjectPackageName());
         //输出目录
         out(model,"service",realPath,temp,root,model.getEntityName(),"I"+model.getEntityName()+"Service");
     }
@@ -157,6 +160,7 @@ public class Automatic {
         root.put("entityPackageName", model.getEntityPackageName());
         root.put("className", model.getEntityName());
         root.put("date",new Date().toString());
+        root.put("projectPackageName",model.getProjectPackageName());
         //输出目录
         out(model,"dao",realPath,temp,root,model.getEntityName(),model.getEntityName()+"Repository");
     }
@@ -175,6 +179,7 @@ public class Automatic {
         root.put("className", model.getEntityName());
         root.put("date",new Date().toString());
         root.put("attrs", model.getEntityAttributes());
+        root.put("projectPackageName",model.getProjectPackageName());
         //输出目录
         out(model,"model",realPath,temp,root,model.getEntityName(),model.getEntityName()+"UpdateModel");
     }
@@ -194,6 +199,7 @@ public class Automatic {
         root.put("project", model.getProjectPackageName());
         root.put("date",new Date().toString());
         root.put("attrs", model.getEntityAttributes());
+        root.put("projectPackageName",model.getProjectPackageName());
         //输出目录
         out(model,"model",realPath,temp,root,model.getEntityName(),model.getEntityName()+"Model");
     }
@@ -217,6 +223,7 @@ public class Automatic {
         root.put("defaultMySqlConfig",model.getDefaultMySqlConfig()); //选择支持mysql模型
         root.put("tableName",model.getTableName());//id模型 及mysql模型都为真的情况下填写表明
         root.put("attrs", model.getEntityAttributes());
+        root.put("projectPackageName",model.getProjectPackageName());
         //输出目录
         out(model,"entity",realPath,temp,root,model.getEntityName(),model.getEntityName());
     }
@@ -247,7 +254,7 @@ public class Automatic {
         File target = new File(dir, filePathJoint(fileName,".java"));
         //如果未设置强行修改并且文件存在，则不修改新文件
         if(!model.getCompelFlag()&&target.exists()){
-            log.warn(target.getName()+" is exists!");
+//            log.warn(target.getName()+" is exists!");
             return;
         }
         OutputStream fos = new FileOutputStream(target); //java文件的生成目录
@@ -304,6 +311,8 @@ public class Automatic {
         Boolean defaultIdConfig=true;
         @ApiModelProperty(value="mysql支持，默认开启",required=true,hidden = true)
         Boolean defaultMySqlConfig=true;
+
+        
     }
 
     /**
@@ -335,7 +344,8 @@ public class Automatic {
         private Boolean annotationFlag;//是否需要手动加入注解 源码中会生成/ / T O D O
 
 
-        /**
+
+		/**
          * 传递基本类型枚举常量
          * @param propertyType
          */

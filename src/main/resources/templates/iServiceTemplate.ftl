@@ -1,6 +1,6 @@
 package ${packageName};
 
-import com.note.service.*;
+import ${projectPackageName}.service.*;
 
 /**
 * Created by LiaoKe on ${date}

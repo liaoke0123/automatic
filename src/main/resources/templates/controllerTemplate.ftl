@@ -2,11 +2,11 @@ package ${packageName};
 
 import com.cloud.Code;
 import com.cloud.MatrixModel;
-import com.note.entity.${entityPackageName}.${className};
-import com.note.exception.BusinessException;
-import com.note.model.${entityPackageName}.${className}Model;
-import com.note.model.${entityPackageName}.${className}UpdateModel;
-import com.note.service.${entityPackageName}.I${className}Service;
+import ${projectPackageName}.entity.${entityPackageName}.${className};
+import ${projectPackageName}.exception.BusinessException;
+import ${projectPackageName}.model.${entityPackageName}.${className}Model;
+import ${projectPackageName}.model.${entityPackageName}.${className}UpdateModel;
+import ${projectPackageName}.service.${entityPackageName}.I${className}Service;
 import io.swagger.annotations.*;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
